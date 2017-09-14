@@ -7,7 +7,7 @@ from services_uf import views
 
 
 urlpatterns = [
-	url(r'^create/$', views.save_foment_unity),
-	url(r'^list/$', views.list_foment_unity),
-	url(r'^price/$', views.consult_foment_unity),
+	url(r'^create/$', views.save_foment_unity, name='uf_create'),
+	url(r'^list/$', views.list_foment_unity, name='uf_list'),
+	url(r'^price/$', views.consult_foment_unity, name='uf_price'),
 ]

@@ -20,7 +20,7 @@ from core_cforemoto.settings import STATIC_ROOT as static
 
 @csrf_exempt
 def save_foment_unity(request):
-	if request.method == 'GET':
+	if request.method == 'POST':
 		UnityFoment.objects.all().delete()
 		file_uf = load_workbook(static+'/historic_uf.xlsx', read_only=True)
 		sheet = file_uf.worksheets[0]
@@ -64,5 +64,5 @@ def consult_foment_unity(request):
 		except Exception as e:
 			return JsonResponse({'message':'You must submit a valid amount'})
 		amount =  value/ unity_foments.value
-		return JsonResponse({'amount':amount}, safe=False)
+		return JsonResponse({'amount':round(amount, 2)}, safe=False)
 	return JsonResponse({'message':'Error'})
