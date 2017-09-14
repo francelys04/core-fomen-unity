@@ -19,7 +19,7 @@ class UnityFomentPriceTests(APITestCase):
 		url = reverse('uf_price')
 		data = {'value': '100000', 'date':'20170902'}
 		response = self.client.get(url, data)
-		self.assertEqual(json.loads(response.content), {'amount UF': 3.76})
+		self.assertEqual(json.loads(response.content), {'amount UF': 3.7583})
 
 
 class UnityFomentCreateTests(APITestCase):

@@ -64,5 +64,5 @@ def consult_foment_unity(request):
 		except Exception as e:
 			return JsonResponse({'message':'You must submit a valid amount'})
 		amount =  value/ unity_foments.value
-		return JsonResponse({'amount UF':round(amount, 2)}, safe=False)
+		return JsonResponse({'amount UF':round(amount, 4)}, safe=False)
 	return JsonResponse({'message':'Error'})
